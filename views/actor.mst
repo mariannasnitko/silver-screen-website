@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{actor.name}}</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <div class="actor">
+        <h2>{{actor.name}}</h2>
+        <p class="act"> {{actor.fact}}
+            <br>
+            <br> <b>Born</b>: {{actor.born}} in {{actor.place}}
+            <br> <b>Zodiac Sign</b>: {{actor.sign}}
+            <br> <b>Years</b>: {{actor.years}} </p>
+    </div>
+    <img class="photo" src="{{actor.photo}}" alt="Photo">
+    <form action="/actors/{{id}}" method="POST" onsubmit="return validationRedirect();">
+        <input type="submit" value="Delete" class="sgn1">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+</head>
+
+<body>
+<div class="e401">
+    <h2>Sorry! <br> You need to login to access this page.</h2>
+    </div>
+    <img id="logo1" src="/images/tv2.gif" alt="tv gif" width="290" height="290">
+</body>
+
+</html>

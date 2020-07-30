@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+    <title>404 Not found</title>
+</head>
+
+<body>
+    {{>footer}}
+</body>
+
+</html>

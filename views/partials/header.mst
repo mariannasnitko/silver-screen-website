@@ -1,0 +1,68 @@
+<!--<div class="menu">
+    <h2>Main menu</h2>
+        <ul id="sections">
+            <li> <a href="/">Home</a> </li>
+            <li> <a href="/users">Users</a> </li>
+            <li> <a href="/movies">Movies</a> </li>
+            <li> <a href="/collections">Movie Collections</a> </li>
+            <li> <a href="/about">About</a> </li>
+        </ul>
+</div>
+
+<p class = "log ">{{login2}} </p>-->
+<script type="text/javascript">
+function disable_enable(_this)
+{
+    if (_this.value == 'login')
+    {
+        document.test.login.disabled=true;
+	    document.test.logout.disabled=false;
+    }
+    else
+    {
+        document.test.login.disabled=false;
+    	document.test.logout.disabled=true;
+    }
+}
+</script>
+
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/">
+    <img class ="ok" src="/images/49672 (1).png" width="30" height="30" class="d-inline-block align-top" alt="">
+    Silver Screen
+  </a>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/users">Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/movies">Movies</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/actors">Actors</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/collections">Collections</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/about">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/profile">Profile</a>
+    </li>
+  </ul>
+  <!-- Navbar text-->
+  <span class="navbar-text ml-auto">{{login2}}</span>
+
+  <form name="test" class="form-inline ml-10" id="g" action="/auth/logout" method="GET" onsubmit="return validationRedirect();" >
+    <button class="btn btn-success" value="logout" type="submit" id="logoutBtn" onclick="disable_enable('logout');">Logout</button>
+  </form>
+  <form class="form-inline ml" id="s" action="/auth/login" method="GET" onsubmit="return validationRedirect();" >
+    <button class="btn btn-success" value="login" type="submit" id="loginBtn" onclick="disable_enable('login');">Login</button>
+  </form>
+  <form class="form-inline ml" id="l" action="/auth/register" method="GET" onsubmit="return validationRedirect();" >
+    <button class="btn btn-success" type="submit" id="regBtn">Sign up</button>
+  </form>
+</nav>

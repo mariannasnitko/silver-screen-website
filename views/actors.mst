@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>Actors</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="/javascripts/movies.js"></script>
+    {{> header}}
+    <div class="choose">
+        <h2>Choose actor:</h2>
+    </div>
+    <div class="table">
+        <table id="myTable" class="center">
+            <tr>
+                <th>Actor</th>
+            </tr>
+            {{#actors}}
+            <tr>
+                <td> <a href="/actors/{{&id}}">{{name}}</a> </td>
+            </tr>
+            {{/actors}}
+        </table>
+       <form class="search2" action="/actors" method="GET">
+    <div class="input-group">
+                <input type="text" name="search" value="{{searchStr}}" placeholder="Search" class="form-control">
+            </div>
+            </div>
+        </form>
+
+<div class="btn-group">
+            <ul class="pagination2">
+            {{#left}}
+                <button class="page-item" class="button" onClick='location. href = "/actors?page={{prevPage}}&search={{searchStr}}"'> &laquo; Prev</button>
+                {{/left}}
+                <button class="page-item" class="button"> {{pageOnSite}} / {{maxPageOnSite}} </button>
+            {{#right}}
+                <button class="page-item" class="button" onClick='location. href = "/actors?page={{nextPage}}&search={{searchStr}}"'>Next &raquo; </button>
+                {{/right}}
+            </ul>
+        </div>
+            <br>
+            <p>Results: {{count}}</p>
+        <p style="clear:both"></p>
+        {{!
+        <form action="/movies/new" method="GET" onsubmit="return validationRedirect();">
+            <input type="submit" value="New">
+            <br>
+        </form> }}
+        <img id="logo" src="/images/neon.gif" alt="tv gif" width="270" height="270">
+</body>
+
+</html>

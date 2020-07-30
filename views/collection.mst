@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>{{collection.title}}</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <div class="collection">
+        <h2>"{{collection.title}}"</h2>
+        <p class="type"> <b>Type</b>:{{collection.type}}
+            <br> <b>Author</b>: {{collection.author}}
+            <br> <b>Likes</b>: {{collection.likes}}
+            <br> <b>Views</b>: {{collection.views}}
+            <br>
+            <br> <b>Movies</b>: {{movies}}
+        </p>
+    </div>
+    <form action="/collections/{{id}}" method="POST" onsubmit="return validationRedirect();">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+
+</html>

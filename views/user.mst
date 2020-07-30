@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>{{{user}}}</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <div class="user">
+        <h2>User info</h2>
+        <p class="info"> <b>Id</b>: {{user.id}}
+            <br> <b>Login</b>: {{{user.login}}}
+            <br> <b>Name</b>: {{{user.fullname}}}
+            <br> <b>Registered</b>: {{{user.registeredAt}}}</p>
+        <form action="/users/{{id}}" method="POST" onsubmit="return validationRedirect();">
+            <select name="role">
+                <option value=1>Admin</option>
+                <option value=0>Basic</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" value="Submit" class="sbm">
+        </form>
+    </div>
+    <img class="avatar" src="{{{user.avaUrl}}}" alt="user pic">
+</body>
+
+</html>

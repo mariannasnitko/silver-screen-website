@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+    <title>Login</title>
+</head>
+
+<body>
+    {{> header }}
+    <style type="text/css">
+        #s,
+        #g {
+            display: none;
+        }
+    </style>
+    <div class="choose">
+    <h2>Login</h2>
+    </div>
+
+    <form class="logForm" method='POST' action='/auth/login' class="was-validated">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+        </div>
+        <p>
+            <input type="submit" value="Log in" class="lgin">
+        </p>
+
+        </div>
+    </form>
+    <img id="logo3" src="/images/star.gif" alt="tv gif" width="290" height="270">
+    {{>footer}}
+</body>
+
+</html>

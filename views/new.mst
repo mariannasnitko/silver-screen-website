@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>Create new movie</title>
+    <style type="text/css">
+#s, #l {
+display: none;
+}
+</style>
+</head>
+
+<body>
+    {{> header }}
+    <form class="newForm" action="/movies/new" method="POST" enctype="multipart/form-data" onsubmit="return validationRedirect();">
+        <div class="form-group row">
+            <label for="title" class="mb-3 col-sm-2 col-form-label">Title:</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" maxlength="40" required>
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="director" class="mb-3 col-sm-2 col-form-label">Director:</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="director" placeholder="Enter director" name="director" maxlength="40" required>
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="genre" class=" mb-3 col-sm-2 col-form-label">Genre:</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="genre" placeholder="Enter genre" name="genre" maxlength="24" required>
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="date" class="mb-3 col-sm-2 col-form-label">Release date:</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="runtime" class=" mb-3 col-sm-2 col-form-label">Runtime:</label>
+            <div class="col-sm-10">
+            <input type="number" class="form-control" id="runtime" name="runtime" min="35" max="360" required>
+        </div>
+        <div class="form-group row">
+            <label for="rating" class="mb-3 col-sm-2 col-form-label">Rating:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="rating" name="rating" min="1" max="10" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="taglines" class="mb-3 col-sm-2 col-form-label">Taglines:</label>
+            <div class="col-sm-10">
+                <textarea name="taglines" class="form-control" maxlength="500" required></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="posterUrl" class="mb-3 col-sm-2 col-form-label">Poster:</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="posterUrl" name="posterUrl" required>
+            </div>
+        </div>
+        <p>
+            <input type="submit" value="Submit" class="sgn">
+        </p>
+    </form>
+    {{>footer}}
+</body>
+
+</html>

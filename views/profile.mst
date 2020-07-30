@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>{{{user}}}</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <div class="user">
+        <h2>My profile</h2>
+        <p class="info"> <b>Id</b>: {{id}}
+            <br> <b>Login</b>: {{{login}}}
+            <br> <b>Name</b>: {{{fullname}}}
+            <br> <b>Registered</b>: {{{registeredAt}}}</p>
+    </div>
+    <img class="avatar" src="{{{avaUrl}}}" alt="user pic">
+</body>
+
+</html>

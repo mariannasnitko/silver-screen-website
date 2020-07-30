@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>Create new movie collection</title>
+    <style type="text/css">
+#s, #l {
+display: none;
+}
+</style>
+</head>
+
+<body>
+    {{> header }}
+    <form class="newForm2" action="/collections/newCol" method="POST" enctype="multipart/form-data" onsubmit="return validationRedirect();">
+        <p>
+            <label>Title
+                <input type="text" name="title">
+            </label>
+        </p>
+        <p>
+            <label>Type
+                <input type="text" name="type">
+            </label>
+        </p>
+        <p>
+            <label>Author
+                <input type="text" name="author">
+            </label>
+        </p>
+        <p>
+            <label>Likes
+                <input type="number" name="likes" min="1" max="1000000">
+            </label>
+        </p>
+        <p>
+            <label>Views
+                <input type="number" name="views" min="1" max="1000000">
+            </label>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    {{>footer}}
+</body>
+
+</html>

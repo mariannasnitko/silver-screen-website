@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>Users</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <h2 class="chu">Choose user:</h2>
+    <div class="table">
+        <table class="center">
+            <tr>
+                <th>Login</th>
+                <th>Name</th>
+                <th>Registered</th>
+            </tr>
+            {{#users}}
+            <tr>
+                <td> <a href="/users/{{id}}">{{login}}</a> </td>
+                <td>{{fullname}}</td>
+                <td>{{registeredAt}}</td>
+            </tr>
+            {{/users}}
+        </table>
+    </div>
+
+    <form class="search1" action="/users" method="GET">
+    <div class="input-group">
+                <input type="text" name="search" value="{{searchStr}}" placeholder="Search" class="form-control">
+            </div>
+            </div>
+        </form>
+
+<div class="btn-group">
+            <ul class="pagination">
+            {{#left}}
+                <button class="page-item" class="button" onClick='location. href = "/users?page={{prevPage}}&search={{searchStr}}"'> &laquo; Prev</button>
+                {{/left}}
+                <button class="page-item" class="button"> {{pageOnSite}} / {{maxPageOnSite}} </button>
+            {{#right}}
+                <button class="page-item" class="button" onClick='location. href = "/users?page={{nextPage}}&search={{searchStr}}"'>Next &raquo; </button>
+                {{/right}}
+            </ul>
+        </div>
+            <br>
+            <p>Results: {{count}}</p>
+    <p style="clear:both"></p>
+    {{> footer }}
+</body>
+
+</html>

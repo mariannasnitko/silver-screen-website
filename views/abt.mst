@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+    <title>About</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header }}
+    <div class="about">
+        <h2>About us:</h2>
+        <p>This is a website where you can find information about movies and actors. </p>
+        <h3>Contact us:</h3>
+        <p> <b>Creator</b>: Marianna Snitko
+            <br> <b>Telegram</b>: m1nd_c0ntrol
+            <br> <b>E-mail</b>: marsnitko17@gmail.com
+            <br> Website created 12th September 2019 </p>
+    </div>
+    {{>footer}}
+</body>
+
+</html>

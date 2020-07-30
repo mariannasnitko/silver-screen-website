@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <title>Collections</title>
+    <style type="text/css">
+        #s,
+        #l {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    {{> header}}
+    <div class="choose">
+        <h2>Choose movie collection:</h2>
+        </div>
+    <div class="table">
+        <table class="center">
+            <tr>
+                <th>Title</th>
+            </tr>
+            {{#collections}}
+            <tr>
+                <td> <a href="/collections/{{&id}}">{{title}}</a> </td>
+            </tr>
+            {{/collections}}
+        </table>
+        <form class="search2" action="/collections" method="GET">
+    <div class="input-group">
+                <input type="text" name="search" value="{{searchStr}}" placeholder="Search" class="form-control">
+            </div>
+            </div>
+        </form>
+
+<div class="btn-group">
+            <ul class="pagination2">
+            {{#left}}
+                <button class="page-item" class="button" onClick='location. href = "/collections?page={{prevPage}}&search={{searchStr}}"'> &laquo; Prev</button>
+                {{/left}}
+                <button class="page-item" class="button"> {{pageOnSite}} / {{maxPageOnSite}} </button>
+            {{#right}}
+                <button class="page-item" class="button" onClick='location. href = "/collections?page={{nextPage}}&search={{searchStr}}"'>Next &raquo; </button>
+                {{/right}}
+            </ul>
+        </div>
+            <br>
+            <p>Results: {{count}}</p>
+        <p style="clear:both"></p>
+        <img id="logo" src="/images/neon.gif" alt="tv gif" width="270" height="270">
+        <form action="/collections/newCol" method="GET" onsubmit="return validationRedirect();">
+            <input type="submit" value="New">
+            <br>
+        </form>
+        {{>footer}}
+</body>
+
+</html>
